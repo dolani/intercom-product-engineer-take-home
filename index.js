@@ -20,5 +20,6 @@ const getCustomersWithinRequiredDistance = async (distance, latitude, longitude)
 
   writeCustomerRecordFile(customerOutputFile);
 }
-
-getCustomersWithinRequiredDistance(100, 53.339428,-6.257664);
+//get the last 3 command line arguments
+const args = [...process.argv.slice(3)];
+getCustomersWithinRequiredDistance(...args);

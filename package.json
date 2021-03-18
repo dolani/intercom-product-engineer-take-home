@@ -4,7 +4,7 @@
   "description": "A program that reads the full list of customers and output the name and user ids of matching customers and user ids of matchomers (within 100km), sorted by User ID",
   "main": "index.js",
   "scripts": {
-    "customer-invitation": "node index.js",
+    "customer-invitation": "node index.js -- 100 53.339428 -6.257664",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ayoola Akindolani",
