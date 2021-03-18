@@ -7,5 +7,5 @@ exports.getTotalCustomersFound = function(totalCustomersFound){
 }
 
 exports.writeCustomerRecordFile = function(fileOutput){
-  console.log(`File output: ${fileOutput}`);
+  console.log(`FILE OUTPUT: ${fileOutput}`);
 }
