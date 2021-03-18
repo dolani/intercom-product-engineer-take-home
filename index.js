@@ -1,4 +1,3 @@
-//import {distance, latitude, longitude} from './src/helpers/constant.js';
 const {getProcessStartLog, getTotalCustomersFound, writeCustomerRecordFile} = require('./src/helpers/logs.js');
 const intercomGetCustomers = require('./src/program/index.js');
 const { join } = require('path');

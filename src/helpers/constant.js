@@ -1,4 +1,4 @@
-export var distance = 100;
-export var latitude = 53.339428;
-export var longitude = -6.257664;
+exports.distance = 100;
+exports.latitude = 53.339428;
+exports.longitude = -6.257664;
 
