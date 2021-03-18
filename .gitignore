@@ -2,3 +2,4 @@ node_modules
 # tests
 .npmignore
 node_modules/
+/node_modules
