@@ -20,6 +20,7 @@ npm run test # Execute tests
 ###### All src code can be found under the `src` directory. 
 ###### `index.js` acts as the entry point. 
 ###### The `src/helpers` folder contains all the helper variables to process the operation.
+###### The `src/helpers/program-tasks` file contains all methods to get customers within distance and sort customers list.
 ###### The `src/program` folder contains all the customer input file and the index program for the customer invitation.
 
 ###### Testing framework used is `mocha`. All tests can be found under the `/test` folder.
