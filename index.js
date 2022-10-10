@@ -1,4 +1,4 @@
-const {getProcessStartLog, getTotalCustomersFound, writeCustomerRecordFile} = require('./src/helpers/logs.js');
+const {getProcessStartLog, logTotalCustomersFound, writeCustomerRecordFile} = require('./src/helpers/logs.js');
 const intercomGetCustomers = require('./src/program/index.js');
 const { join } = require('path');
 const { writeFile } = require('fs');
@@ -10,7 +10,7 @@ var customerInputFile = join(__dirname, 'src/program/customers.txt');
 const getCustomersWithinRequiredDistance = async (distance, latitude, longitude) => {
   getProcessStartLog(distance);
   const customers = await intercomGetCustomers.getCustomersWithinDistance(customerInputFile,latitude,longitude,distance);
-  getTotalCustomersFound(customers.length);
+  logTotalCustomersFound(customers.length);
 
   await promisify(writeFile)(
     customerOutputFile,
