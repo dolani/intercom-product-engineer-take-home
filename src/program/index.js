@@ -8,7 +8,6 @@ exports.getCustomersWithinDistance = async function (inputFilePath, reqlatitude,
   await readInputFilePath(inputFilePath, (customerRecord) => {
     let customerDistance = null;
     const customer = camelcaseKeys(JSON.parse(customerRecord));
-
     if (customer) {
       customerDistance = getCustomersFromDistance(radius, reqlatitude, reqlongitude, customer.latitude, customer.longitude);
     }
