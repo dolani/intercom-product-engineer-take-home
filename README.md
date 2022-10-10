@@ -15,6 +15,7 @@ NPM version >= 6.14.11
 npm install # Install required dependencies
 
 npm run customer-invitation # Generate output file with result
+or `node index.js -- 100 53.339428 -6.257664` with last 3 arguments as `distance`, `latitude` and `longitude`
 
 npm run test # Execute tests
 ```

@@ -2,7 +2,8 @@ const { existsSync, createReadStream } = require('fs');
 const { createInterface } = require('readline');
 const { once } = require('events');
 const { getPIDividedBy180 } = require('../helpers/constant.js');
-//#region read input file
+
+// #region read input file
 exports.readInputFilePath = async function (inputFilePath, customerRecordCallback) {
   if (!existsSync(inputFilePath)) {
     throw new Error('Input file path does not exist.');
@@ -16,25 +17,29 @@ exports.readInputFilePath = async function (inputFilePath, customerRecordCallbac
   await once(fileStreamLineInterface, 'close');
 };
 
-//#endregion
+// #endregion
 
-//#region sort customer list ASC
-exports.sortCustomerListByUserId = function (objects, prop) {
-  if (!Array.isArray(objects) || !prop) {
-    throw new Error('Object is invalid');
+// #region sort customer list ASC
+exports.sortCustomerListByUserId = function (customers, prop) {
+  if (!Array.isArray(customers)) {
+    throw new Error('Customer array is invalid.');
+  }
+
+  if (!prop) {
+    throw new Error('Property name is invalid.');
   }
 
   let i, j;
 
-  for (i = 0; i < objects.length; ++i) {
-    const object = objects[i];
+  for (i = 0; i < customers.length; ++i) {
+    const object = customers[i];
 
     if (
-      typeof objects[i] === 'object' &&
-      objects[i] &&
+      typeof customers[i] === 'object' &&
+      customers[i] &&
       !(
-        typeof objects[i][prop] === 'number' ||
-        typeof objects[i][prop] === 'string'
+        typeof customers[i][prop] === 'number' ||
+        typeof customers[i][prop] === 'string'
       )
     ) {
       throw new Error('customer array is invalid');
@@ -42,16 +47,16 @@ exports.sortCustomerListByUserId = function (objects, prop) {
 
     let j;
 
-    for (j = i - 1; j >= 0 && objects[j][prop] > object[prop]; --j) {
-      objects[j + 1] = objects[j];
+    for (j = i - 1; j >= 0 && customers[j][prop] > object[prop]; --j) {
+      customers[j + 1] = customers[j];
     }
 
-    objects[j + 1] = object;
+    customers[j + 1] = object;
   }
 
-  return objects;
+  return customers;
 };
-//#endregion
+// #endregion
 
 exports.getCustomersFromDistance = function (radius, reqlatitude, reqlongitude, customerLatitude, customerLongitude) {
   if (!radius || (reqlatitude === customerLatitude && reqlongitude === customerLongitude)) {
@@ -72,7 +77,7 @@ exports.getCustomersFromDistance = function (radius, reqlatitude, reqlongitude, 
 
 }
 
-//#region private method
+// #region private method
 function degreesToRadians(degrees) {
   return degrees * getPIDividedBy180;
 };
@@ -83,4 +88,4 @@ function haversineFunction(x, y) {
 
   return sin * sin;
 };
-//#endregion
+// #endregion
