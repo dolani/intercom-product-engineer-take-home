@@ -1,14 +1,14 @@
-# intercom-engineer
+# Intercom Engineer
 A program that produces the list of customers within a specified distance in a given coordinates
 
-## Installation
+### Installation
 
 ```bash
 Node version >= 14.16.0
 NPM version >= 6.14.11
 ```
 
-## Getting Started
+### Getting Started
 
 ```bash
 npm install # Install required dependencies
@@ -19,7 +19,7 @@ or `node index.js -- 100 53.339428 -6.257664` with last 3 arguments as `distance
 npm run test # Execute tests
 ```
 
-## Code Architecture
+### Code Architecture
 
 ###### Source code can be found under the `src` directory.
 
@@ -33,6 +33,6 @@ npm run test # Execute tests
 
 ###### Testing framework used is `mocha`. All tests can be found under the `/test` folder.
 
-## Output
+### Output
 
 [output](https://github.com/dolani/intercom-product-engineer-take-home/blob/main/output.txt)
