@@ -1,6 +1,5 @@
-# intercom-product-engineer-take-home-test
-
-A program that produces the list of customers within a specified distance in a given latitude/longitude coordinates
+# intercom-engineer
+A program that produces the list of customers within a specified distance in a given coordinates
 
 ## Installation
 
@@ -36,4 +35,4 @@ npm run test # Execute tests
 
 ## Output
 
-[output.txt](https://github.com/dolani/intercom-product-engineer-take-home/blob/main/output.txt)
+[output](https://github.com/dolani/intercom-product-engineer-take-home/blob/main/output.txt)
